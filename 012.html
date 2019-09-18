@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://kit.fontawesome.com/80b7a1eb3e.js"></script>
+    <title>Document</title>
+
+    <style>
+      i {
+        display: block;
+        font-size: 3em;
+        color: black;
+      }
+
+      i:hover {
+        color: steelblue;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Click on the icon to toggle between thumbs-up and thumbs-down
+      (like/dislike)
+    </p>
+
+    <i Onclick="dislike(this)" class="fas fa-thumbs-up"></i>
+
+    <script>
+      function dislike(x) {
+        x.classList.toggle("fa-thumbs-down");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #galleryZone {
+        text-align: center;
+        width: 500px;
+      }
+
+      img {
+        width: 50%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="galleryZone">
+      <p>
+        <img
+          src="https://cdn.pixabay.com/photo/2019/08/29/06/24/elephants-4438284_1280.jpg"
+          alt=""
+        />
+      </p>
+      <p>
+        <button Onclick="gallery(0)">이전그림</button>
+        <button Onclick="gallery(1)">다음그림</button>
+      </p>
+    </div>
+
+    <script>
+      let num = 1;
+
+      const gallery = direct => {
+        if (direct) {
+          if (num == 8) return;
+          num++;
+        } else {
+          if (num == 1) return;
+          num--;
+        }
+      };
+
+      const imgTag = document.getElementById("");
+    </script>
+  </body>
+</html>

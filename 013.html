@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>Speed Converter</h1>
+    <p>Type a value in the MPH field to convert the value to KPH:</p>
+
+    <label for="number">MPH</label>
+    <input
+      type="number"
+      id="inputMPH"
+      name="number"
+      placeholder="MPH"
+      Oninput="change(this.value)"
+      Onchange="change(this.value)"
+    />
+    <p class="speeds">KPH: <span id="kph"></span></p>
+
+    <label for="pit">PEET</label>
+    <input
+      type="number"
+      id="inputM"
+      placeholder="Pit"
+      name="peet"
+      oninput="cant(this.value)"
+      onchange="cant(this.value)"
+    />
+
+    <p>CM: <span id="cmm"></span></p>
+
+    <script>
+      function change(valNum) {
+        document.getElementById("kph").innerHTML = valNum * 1.609344;
+      }
+
+      function cant(valN) {
+        document.getElementById("cmm").innerHTML = valN * 30.48;
+      }
+    </script>
+  </body>
+</html>

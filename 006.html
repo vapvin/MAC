@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>인접 관계 선택자</h1>
+    <ul id="wrap">
+      <li>
+        list1
+        <ul>
+          <li id="list_1">list 1-1</li>
+          <li>list 1-2</li>
+        </ul>
+      </li>
+      <li>
+        list2
+        <ul>
+          <li></li>
+          <li></li>
+        </ul>
+      </li>
+      <li>
+        list3
+        <ul>
+          <li></li>
+          <li></li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>content1</p>
+    <p class="txt">content2</p>
+    <p>content3</p>
+    <p>content4</p>
+
+    <script>
+      $(function() {
+        $("#list_1")
+          .parent()
+          .css("border", "10px solid red");
+
+        var style_1 = {
+          background: "orange",
+          border: "10px solid red"
+        };
+
+        var style_2 = {
+          background: "yellow",
+          border: "10px dashed black"
+        };
+
+        $(".txt")
+          .prevAll()
+          .css(style_1);
+
+        $(".txt + p").css(style_2);
+        $(".txt")
+          .nextAll()
+          .css(style_2);
+      });
+    </script>
+  </body>
+</html>

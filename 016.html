@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://kit.fontawesome.com/80b7a1eb3e.js"></script>
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+      }
+
+      button {
+        all: unset;
+        background: steelblue;
+        padding: 16px 18px;
+      }
+
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .modal_overlay {
+        background: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      .box {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box .search {
+        all: unset;
+        width: 60%;
+        padding: 16px 18px;
+        background: #eee;
+      }
+
+      .box .search-btn {
+        width: 20%;
+      }
+
+      .box .search,
+      .search-btn {
+        float: left;
+      }
+
+      .closebtn {
+        background: none;
+        color: white;
+        font-size: 2em;
+        font-weight: 600;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="open">Open</button>
+    <div class="modal hidden">
+      <div class="modal_overlay"></div>
+      <button class="closebtn">X</button>
+      <div class="box">
+        <input
+          type="text"
+          class="search"
+          name="search"
+          placeholder="search..."
+        />
+        <button class="search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const open = document.getElementById("open");
+      const modal = document.querySelector(".modal");
+      const overlay = document.querySelector(".modal_overlay");
+      const box = document.querySelector(".box");
+      const close = document.querySelector(".closebtn");
+
+      const openModal = () => modal.classList.remove("hidden");
+      const closeModal = event => modal.classList.add("hidden");
+
+      open.addEventListener("click", openModal);
+      overlay.addEventListener("click", closeModal);
+      box.addEventListener("click", closeModal);
+      close.addEventListener("click", closeModal);
+    </script>
+  </body>
+</html>
