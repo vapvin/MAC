@@ -5,6 +5,548 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .top__text__wrap {
+        width: 100%;
+        height: 300px;
+        background: url(https://i.imgur.com/j5M1K5y.jpg) no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+      .text__wrap {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+      }
+      .nav__link {
+        width: 100%;
+        overflow: hidden;
+        padding: 0 40px;
+      }
+      .nav__link a {
+        display: inline-block;
+        padding: 12px 16px;
+        text-decoration: none;
+        color: white;
+      }
+
+      .title__text {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .lfrt {
+        position: relative;
+      }
+
+      .lfrt:before {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 30%;
+        top: 50%;
+        transform: translate(0, -50%);
+        background: #aaa;
+        position: absolute;
+        left: 0;
+      }
+
+      .lfrt:after {
+        content: "";
+        display: block;
+        width: 1px;
+        height: 30%;
+        top: 50%;
+        transform: translate(0, -50%);
+        background: #aaa;
+        position: absolute;
+        right: 0;
+      }
+
+      .hidden__venner {
+        width: 100%;
+        height: 300px;
+        background: steelblue;
+        padding: 40px 0;
+        transition: 1s;
+      }
+
+      .hidden {
+        height: 0;
+        padding: 0;
+      }
+
+      .btn {
+        width: 10%;
+        font-size: 2em;
+        font-weight: 600;
+        color: white;
+        float: left;
+      }
+
+      .btn:after {
+        clear: both;
+      }
+
+      .box__hiden__v {
+        width: 1080px;
+        height: 100%;
+        margin: 0 auto;
+      }
+
+      .app-wrap {
+        display: inline-block;
+        width: 70%;
+        /* height: 100%; */
+        float: left;
+        margin: 40px 0 0 0;
+        color: white;
+        font-size: 1.2em;
+      }
+
+      .url-wrap {
+        width: 60%;
+        overflow: hidden;
+        float: left;
+        color: white;
+        font-size: 1.2em;
+        display: inline-block;
+      }
+
+      .app-wrap .url-wrap p {
+        margin: 0 0 10px 0;
+      }
+
+      .text-1 {
+        font-size: 0.8em;
+      }
+
+      .qrbox {
+        width: 40%;
+        height: 100%;
+        display: inline-block;
+        float: left;
+        padding: 0 0 20px 20px;
+      }
+
+      .hidden2 {
+        display: none;
+      }
+
+      .section {
+        width: 1080px;
+        height: auto;
+        /* overflow: hidden; */
+        margin: 0 auto;
+        padding: 100px 0 0;
+        margin-bottom: 200px;
+      }
+
+      .section__content__1 {
+        width: 100%;
+        height: 300px;
+        border-top: 3px solid steelblue;
+        border-bottom: 1px solid steelblue;
+        padding: 130px 0 51px;
+        text-align: center;
+        background: #eee;
+      }
+
+      .inbox {
+        display: inline-block;
+        width: auto;
+      }
+
+      .section__content__2 {
+        width: 100%;
+        height: 520px;
+        margin: 70px 0 0;
+        background: #fff;
+      }
+
+      .content-2-box1 {
+        width: 100%;
+        height: 130px;
+        margin: 0 0 70px;
+        padding: 30px 20px 10px 77px;
+        border: 3px solid #e3e4e5;
+      }
+
+      .left {
+        width: 32%;
+        min-height: 52px;
+        float: left;
+        padding: 0 15px 0 76px;
+        position: relative;
+      }
+
+      .left:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 100%;
+        width: 1px;
+        height: 66px;
+        background: #e3e4e5;
+      }
+
+      .right {
+        width: 68%;
+        float: left;
+        margin: 0;
+        padding: 0;
+        height: 80px;
+      }
+
+      .content-2-box2 {
+        width: 100%;
+        height: 120px;
+        margin: 0 0 70px 0;
+        padding: 30px 20px 10px 50px;
+        background: #007ac3;
+      }
+
+      .nme {
+        text-decoration: none;
+      }
+
+      .nme:hover {
+        text-decoration: underline;
+      }
+
+      .content-2-box3 {
+        width: 100%;
+        height: 175px;
+        padding: 49px 0 44px;
+        border: 1px solid #e3e4e5;
+      }
+
+      .hexa {
+        position: relative;
+      }
+
+      .hexa .hexacon {
+        position: absolute;
+        width: 60px;
+        height: 40px;
+        top: 10%;
+        left: 10%;
+        background: steelblue;
+      }
+
+      .hexacon:before {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-bottom: 15px solid steelblue;
+      }
+
+      .hexacon:after {
+        content: "";
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-top: 15px solid steelblue;
+      }
+
+      .arrow__icon:after {
+        content: "\003e";
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <!-- header bottom content -->
+
+    <div class="top__text__wrap">
+      <div class="text__wrap">
+        <div class="nav__link">
+          <a href="#">홈</a>
+          <a href="#" class="lfrt">조회/예약</a>
+          <a href="#">택배조회</a>
+        </div>
+        <div class="title__text">
+          <h1 style="font-size:60px; margin:0;">택배조회</h1>
+          <p>CJ대한통운은 고객님의 소중한 마음까지 전달합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- header botton content finish -->
+
+    <!-- hidden script venner -->
+
+    <div class="hidden__venner">
+      <div class="box__hiden__v">
+        <p
+          style="font-size:2em; display:inline-block; color:white; float:left; margin:40px 0; margin-right:50px;"
+        >
+          CJ대한통운APP으로<br />
+          택배 서비스 이용이 <br />더욱 쉬워집니다.
+        </p>
+        <div class="app-wrap">
+          <div class="url-wrap" style="border-right:1px solid deepskyblue">
+            <p class="title-1">SMS로 다운로드 URL받기</p>
+            <div class="text-1">
+              APP설치 안내를 받기 위해 본인의 휴대폰 번호를 입력하며<br />
+              입력하신 번호는 저장되지 않습니다.
+              <label for=""
+                >이에 동의합니다.
+                <input type="checkbox" />
+              </label>
+              <input
+                type="text"
+                placeholder="'-'없이 번호만 입력"
+                style="display:inline-block; width:60%; height:56px; border:none; float:left;"
+              />
+              <button
+                style="display:inline-block; width:20%; padding:14px 16px; border:none; font-size:1.2em; color:gray; float:left; margin-left:20px;"
+              >
+                전송
+              </button>
+            </div>
+          </div>
+          <div class="qrbox">
+            <p
+              style="display:inline-block; width:90%; float:left; margin:10px 0 0;"
+            >
+              QR코드 스캔
+            </p>
+            <span class="btn">X</span>
+            <img
+              src="data:image/png;base64,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"
+              alt=""
+              width="80px"
+              height="80px"
+              style="display:inline-block;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- hidden script finish -->
+
+    <!-- main Section  -->
+
+    <div class="section">
+      <div class="section__content__1">
+        <p style="font-size:1.6em;">
+          운송장 번호를 입력하시고 실시간 배송정보를 확인하세요.
+        </p>
+        <div class="inbox">
+          <input
+            type="text"
+            style="all:unset; width:300px; height:50px; padding:0 30px display:inline-block; float:left; border:1px solid #eee; background:#fff;"
+          />
+          <input
+            type="submit"
+            style="all:unset; width:50px; height:50px; border:1px solid #eee; background:#fff; display:inline-block; float:left;"
+          />
+        </div>
+      </div>
+      <div class="section__content__2">
+        <div class="content-2-box1">
+          <div class="left">
+            <span
+              style="color:#333; font-size:20px; font-weight:600; display:inline-block; padding:0 20px 0 0;"
+              >택배 고객센터 안내</span
+            >
+            <p
+              style="margin-top:10px;color: #007ac3; font-size:36px; padding:0; font-weight:600;"
+            >
+              1588-1255
+            </p>
+          </div>
+          <div class="right">
+            <ul
+              style="width:100%; height:100%; list-style:none; font-size:18px;"
+            >
+              <li>
+                <span
+                  style="display:inline-block; width:20%; margin:0; padding:0 18px 0 0; color:#007ac3; float:left;"
+                  >상담운영시간</span
+                >
+                <p
+                  style="display:inline-block; float:left; width:80%; margin:0;"
+                >
+                  월~금요일 9:00~18:00 / 토요일 9:00~13:00
+                </p>
+                <p
+                  style="display:inline-block; float:left; width: 100%; margin:0;"
+                >
+                  상품의 파손, 변질에 의한 택배 사고 접수는
+                  <a href="" style="color:steelblue; text-decoration:underline;"
+                    >1:1</a
+                  >
+                  문의를 통해 직접 하실 수 있습니다.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="content-2-box2">
+          <div
+            class="left1"
+            style="padding:12px 15px 0 76px; border-right:1px solid white; width:300px; min-height:55px; float:left;"
+          >
+            <span
+              style="color:#fff; font-size:20px; font-weight:600; display:inline-block; padding:0 20px 0 0;"
+              >무인락커 예약 서비스</span
+            >
+          </div>
+          <div
+            class="right2"
+            style="width:620px; float:left; padding-left:48px; position:relative;"
+          >
+            <p style="line-height:26px; color:#fff; margin:0; padding:0;">
+              CJ대한통운 APP의 무인락커 예약 서비스를 이용하시면 언제 어디서든
+              편리하게 택배 발송 예약을 하실 수 있습니다.
+            </p>
+            <a
+              class="nme"
+              href="#"
+              style="position:absolute; bottom:0; right:0; font-weight:600; padding-right:15px; color:white;"
+              >자세히 보기 ></a
+            >
+          </div>
+        </div>
+        <div class="content-2-box3">
+          <ul style="width:100%; height:80px; margin:0; padding:0;">
+            <li
+              class="hexa"
+              style="width:34%;  height:100%; display:inline-block;"
+            >
+              <span class="hexacon"></span>
+              <a
+                class="icon_1"
+                href="#"
+                style="display:inline-block; width:100%; min-height:72px; padding:0 10px 0 129px; text-decoration:none; float:left;"
+              >
+                <span class="hexacon"></span>
+                <p
+                  class="arrow__icon"
+                  style="margin:-6px 0 7px; padding:0 16px 0 0; color: #007ac3; font-size:18px;"
+                >
+                  고객지원 홈
+                </p>
+                <p style="color:#333; font-size:16px;">
+                  소중한 마음까지<br />전달하는 CJ대한통운
+                </p>
+              </a>
+            </li>
+            <li
+              class="hexa"
+              style="width:32%;  height:100%; display:inline-block;"
+            >
+              <span class="hexacon"></span>
+              <a
+                class="icon_2"
+                href="#"
+                style="display:inline-block; width:100%; min-height:72px; padding:0 10px 0 129px; text-decoration:none; float:left;"
+              >
+                <p
+                  class="arrow__icon"
+                  style="margin:-6px 0 7px; padding:0 16px 0 0; color: #007ac3; font-size:18px;"
+                >
+                  자주 묻는 질문
+                </p>
+                <p style="color:#333; font-size:16px;">
+                  궁금하신 점이 있다면<br />여기서 먼저 찾아보세요.
+                </p>
+              </a>
+            </li>
+            <li
+              class="hexa"
+              style="width:33%; height:100%; display:inline-block;"
+            >
+              <span class="hexacon"></span>
+              <a
+                class="icon_3"
+                href="#"
+                style="display:inline-block; width:100%; min-height:72px; padding:0 10px 0 129px; text-decoration:none; float:left;"
+              >
+                <p
+                  class="arrow__icon"
+                  style="margin:-6px 0 7px; padding:0 16px 0 0; color: #007ac3; font-size:18px;"
+                >
+                  이용안내
+                </p>
+                <p style="color:#333; font-size:16px;">
+                  사업별 서비스를<br />안내해드립니다.
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- main section finish -->
+
+    <!-- footer start -->
+
+    <div class="footer">
+      <!-- footer img box  -->
+
+      <div class="img__box"></div>
+
+      <!-- footer img box end -->
+
+      <!-- footer main nav  -->
+
+      <div class="footer__nav"></div>
+
+      <!-- footer main nav end -->
+
+      <!-- footer link start -->
+
+      <div class="footer__link"></div>
+
+      <!-- footer link end -->
+
+      <!-- footer address start -->
+
+      <div class="address"></div>
+
+      <!-- footer address end -->
+    </div>
+    <!-- footer end -->
+
+    <script>
+      const hv = document.querySelector(".hidden__venner");
+      const hv2 = document.querySelector(".box__hiden__v");
+      const btn = hv.querySelector(".btn");
+
+      const hidden = () => {
+        hv.classList.add("hidden");
+        hv2.classList.add("hidden2");
+      };
+      btn.addEventListener("click", hidden);
+    </script>
+  </body>
 </html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      p {
+        width: 100%;
+        display: block;
+        padding: 30px;
+        color: white;
+        margin: 0;
+        font-size: 1.5em;
+      }
+
+      .open {
+        background: #333;
+        height: 100px;
+      }
+
+      .close {
+        background: #ddd;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      .showw {
+        height: 100px;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Collapsibles</h1>
+    <p>A Collapsible :</p>
+
+    <p class="open">Open Click1
+    <p class="close">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem,
+      animi doloribus? Ut vero perspiciatis veritatis deserunt asperiores
+      repellendus? Repellat placeat et odit harum accusamus consectetur, ut
+      itaque beatae? Assumenda, harum!
+    </p>
+</p>
+    <p class="open">Open Click1
+    <p class="close">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus eos
+      ipsam commodi tempore molestias omnis. Aliquam id, eius vitae, explicabo
+      est, eveniet laudantium culpa non placeat consequuntur perspiciatis
+      incidunt earum.
+    </p>
+</p>
+    <p class="open">Open Click1
+    <p class="close">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima nulla
+      adipisci itaque distinctio vel veritatis obcaecati illo ullam? Beatae,
+      autem. Sunt possimus beatae labore vitae, soluta quibusdam ipsa itaque
+      harum?
+    </p>
+</p>
+
+    <script>
+      const open = document.getElementsByClassName("open");
+      const close = document.getElementsByClassName("close");
+      let i;
+
+      function showing() {
+        for (let j = 0; j < close.length; j++) {
+          close[j].classList.toggle("showw");
+        }
+      }
+
+      for (i = 0; i < open.length; i++) {
+        open[i].addEventListener("click", showing);
+      }
+    </script>
+  </body>
+</html>

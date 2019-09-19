@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script
+      src="https://kit.fontawesome.com/80b7a1eb3e.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+
+    <style>
+      li {
+        list-style: none;
+      }
+
+      .first,
+      .second,
+      .last {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tree view</h1>
+    <p>
+      A tree view represents a hierarchical view of informatin, where each item
+      can have a nuber of subitems.
+    </p>
+    <p>Click on the arrow(s) to open or close the tree branches.</p>
+
+    <span onclick="one()">
+      <i class="fas fa-caret-right owns"></i> Beverages</span
+    >
+    <ul class="first">
+      <li>Water</li>
+      <li>Coffee</li>
+      <li onclick="two()">
+        <i class="fas fa-caret-right twos"></i>
+        Tea
+        <ul class="second">
+          <li>Black Tea</li>
+          <li>White Tea</li>
+          <li onclick="tre()">
+            <i class="fas fa-caret-right ths"></i>
+            Green Tea
+            <ul class="last">
+              <li>Sencha</li>
+              <li>Gyokuro</li>
+              <li>Matcha</li>
+              <li>Pi Lo Chun</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <script>
+      const first = document.querySelector(".first");
+      const sec = document.querySelector(".second");
+      const last = document.querySelector(".last");
+      const down1 = document.querySelector(".owns");
+      const down2 = document.querySelector(".twos");
+      const down3 = document.querySelector(".ths");
+
+      const DOWN = "fa-caret-down";
+      const RIGHT = "fa-caret-right";
+
+      const one = () => {
+        first.style.display = "block";
+        down1.classList.add(DOWN);
+        down1.classList.remove(RIGHT);
+      };
+
+      const two = () => {
+        sec.style.display = "block";
+        down2.classList.add(DOWN);
+        down2.classList.remove(RIGHT);
+      };
+
+      const tre = () => {
+        last.style.display = "block";
+        down3.classList.add(DOWN);
+        down3.classList.remove(RIGHT);
+      };
+    </script>
+  </body>
+</html>
