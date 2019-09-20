@@ -4,353 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="stylesheet" href="css/022.css" />
     <script
       src="https://kit.fontawesome.com/80b7a1eb3e.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <title>Document</title>
-
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      ::-webkit-scrollbar {
-        width: 10px;
-      }
-
-      ::-webkit-scrollbar-track {
-        background-color: #f0f0f0;
-        box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.6) inset;
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: #007ac3;
-      }
-
-      ::-webkit-scrollbar-button {
-        display: none;
-      }
-
-      .top__text__wrap {
-        width: 100%;
-        height: 300px;
-        background: url(https://i.imgur.com/j5M1K5y.jpg) no-repeat;
-        background-position: center;
-        background-size: cover;
-      }
-      .text__wrap {
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        color: white;
-      }
-      .nav__link {
-        width: 100%;
-        overflow: hidden;
-        padding: 0 40px;
-      }
-      .nav__link a {
-        display: inline-block;
-        padding: 12px 16px;
-        text-decoration: none;
-        color: white;
-      }
-
-      .title__text {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .lfrt {
-        position: relative;
-      }
-
-      .lfrt:before {
-        content: "";
-        display: block;
-        width: 1px;
-        height: 30%;
-        top: 50%;
-        transform: translate(0, -50%);
-        background: #aaa;
-        position: absolute;
-        left: 0;
-      }
-
-      .lfrt:after {
-        content: "";
-        display: block;
-        width: 1px;
-        height: 30%;
-        top: 50%;
-        transform: translate(0, -50%);
-        background: #aaa;
-        position: absolute;
-        right: 0;
-      }
-
-      .hidden__venner {
-        width: 100%;
-        height: 300px;
-        background: steelblue;
-        padding: 40px 0;
-        transition: 1s;
-      }
-
-      .hidden {
-        height: 0;
-        padding: 0;
-      }
-
-      .btn {
-        width: 10%;
-        font-size: 2em;
-        font-weight: 600;
-        color: white;
-        float: left;
-      }
-
-      .btn:after {
-        clear: both;
-      }
-
-      .box__hiden__v {
-        width: 1080px;
-        height: 100%;
-        margin: 0 auto;
-      }
-
-      .app-wrap {
-        display: inline-block;
-        width: 70%;
-        /* height: 100%; */
-        float: left;
-        margin: 40px 0 0 0;
-        color: white;
-        font-size: 1.2em;
-      }
-
-      .url-wrap {
-        width: 60%;
-        overflow: hidden;
-        float: left;
-        color: white;
-        font-size: 1.2em;
-        display: inline-block;
-      }
-
-      .app-wrap .url-wrap p {
-        margin: 0 0 10px 0;
-      }
-
-      .text-1 {
-        font-size: 0.8em;
-      }
-
-      .qrbox {
-        width: 40%;
-        height: 100%;
-        display: inline-block;
-        float: left;
-        padding: 0 0 20px 20px;
-      }
-
-      .hidden2 {
-        display: none;
-      }
-
-      .section {
-        width: 1080px;
-        height: auto;
-        /* overflow: hidden; */
-        margin: 0 auto;
-        padding: 100px 0 0;
-        margin-bottom: 200px;
-      }
-
-      .section__content__1 {
-        width: 100%;
-        height: 300px;
-        border-top: 3px solid steelblue;
-        border-bottom: 1px solid steelblue;
-        padding: 130px 0 51px;
-        text-align: center;
-        background: #eee;
-      }
-
-      .inbox {
-        display: inline-block;
-        width: auto;
-      }
-
-      .section__content__2 {
-        width: 100%;
-        height: 520px;
-        margin: 70px 0 0;
-        background: #fff;
-      }
-
-      .content-2-box1 {
-        width: 100%;
-        height: 130px;
-        margin: 0 0 70px;
-        padding: 30px 20px 10px 77px;
-        border: 3px solid #e3e4e5;
-      }
-
-      .left {
-        width: 32%;
-        min-height: 52px;
-        float: left;
-        padding: 0 15px 0 76px;
-        position: relative;
-      }
-
-      .left:before {
-        content: "";
-        display: block;
-        position: absolute;
-        left: 100%;
-        width: 1px;
-        height: 66px;
-        background: #e3e4e5;
-      }
-
-      .right {
-        width: 68%;
-        float: left;
-        margin: 0;
-        padding: 0;
-        height: 80px;
-      }
-
-      .content-2-box2 {
-        width: 100%;
-        height: 120px;
-        margin: 0 0 70px 0;
-        padding: 30px 20px 10px 50px;
-        background: #007ac3;
-      }
-
-      .nme {
-        text-decoration: none;
-      }
-
-      .nme:hover {
-        text-decoration: underline;
-      }
-
-      .content-2-box3 {
-        width: 100%;
-        height: 175px;
-        padding: 49px 0 44px;
-        border: 1px solid #e3e4e5;
-        border-left: none;
-        border-right: none;
-      }
-
-      .hexa {
-        position: relative;
-      }
-
-      .hexa .hexacon {
-        position: absolute;
-        width: 60px;
-        height: 40px;
-        top: 10%;
-        left: 10%;
-        background: steelblue;
-      }
-
-      .hexacon:before {
-        content: "";
-        position: absolute;
-        top: -15px;
-        left: 0;
-        width: 0;
-        height: 0;
-        border-left: 30px solid transparent;
-        border-right: 30px solid transparent;
-        border-bottom: 15px solid steelblue;
-      }
-
-      .hexacon:after {
-        content: "";
-        position: absolute;
-        bottom: -15px;
-        left: 0;
-        width: 0;
-        height: 0;
-        border-left: 30px solid transparent;
-        border-right: 30px solid transparent;
-        border-top: 15px solid steelblue;
-      }
-
-      .arrow__icon:after {
-        content: "\003e";
-      }
-
-      .side__fixed {
-        width: 48px;
-        height: 150px;
-        position: fixed;
-        top: 60%;
-        right: 10px;
-      }
-
-      .fixed__link {
-        margin: 0 0 6px 0;
-        padding: 0;
-      }
-
-      .link__content {
-        list-style: none;
-      }
-
-      .linked {
-        display: block;
-        width: 48px;
-        height: 48px;
-        color: #eee;
-        border: 1px solid #ccc;
-        background: #fff;
-      }
-
-      .linked > span {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 2em;
-      }
-
-      .img__box {
-        width: 100%;
-        height: 185px;
-      }
-
-      .img-content {
-        width: 50%;
-        height: 100%;
-        float: left;
-      }
-
-      .img-content:after {
-        clear: both;
-      }
-    </style>
   </head>
   <body>
     <!-- header bottom content -->
@@ -394,10 +55,10 @@
               <input
                 type="text"
                 placeholder="'-'없이 번호만 입력"
-                style="display:inline-block; width:60%; height:56px; border:none; float:left;"
+                style="display:inline-block; width:60%; height:44px; border:none; float:left; margin-top:10px;"
               />
               <button
-                style="display:inline-block; width:20%; padding:14px 16px; border:none; font-size:1.2em; color:gray; float:left; margin-left:20px;"
+                style="display:inline-block; width:20%; padding:8px 16px; border:none; font-size:1.2em; color:gray; float:left; margin-left:20px; margin-top:10px;"
               >
                 전송
               </button>
@@ -575,71 +236,175 @@
               </a>
             </li>
           </ul>
+          <div class="side__fixed">
+            <ul class="fixed__link">
+              <li class="link__content">
+                <a href="#" class="linked">
+                  <span>
+                    <i class="fas fa-share-alt"></i>
+                  </span>
+                </a>
+              </li>
+              <li class="link__content">
+                <a href="#" class="linked">
+                  <span><i class="fas fa-print"></i></span>
+                </a>
+              </li>
+            </ul>
+            <a href="#" class="linked">
+              <span>
+                <i class="fas fa-angle-up"></i>
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="side__fixed">
-      <ul class="fixed__link">
-        <li class="link__content">
-          <a href="#" class="linked">
-            <span>
-              <i class="fas fa-share-alt"></i>
-            </span>
-          </a>
-        </li>
-        <li class="link__content">
-          <a href="#" class="linked">
-            <span><i class="fas fa-print"></i></span>
-          </a>
-        </li>
-      </ul>
-      <a href="#" class="linked">
-        <span>
-          <i class="fas fa-angle-up"></i>
-        </span>
-      </a>
-    </div>
-
     <!-- main section finish -->
-
     <!-- footer img box  -->
 
     <div class="img__box">
-      <div class="img-content"></div>
-      <div class="img-content"></div>
+      <div class="img-content">
+        <div class="img_op">
+          <a href="#" class="text_img">
+            <p class="t1">택배 사업영역 안내</p>
+            <p class="t2">
+              압도적 인프라와 최첨단 물류기술 <br />택배산업의 패러다임을
+              주도합니다.
+            </p>
+          </a>
+        </div>
+      </div>
+      <div class="img-content">
+        <div class="img_op">
+          <a href="#" class="text_img">
+            <p class="t1">택배 서비스 이용안내</p>
+            <p class="t2">CJ대한통운은 최상의 <br />서비스를 제공합니다.</p>
+          </a>
+        </div>
+      </div>
     </div>
 
     <!-- footer img box end -->
 
     <!-- footer main nav  -->
 
-    <div class="footer__nav"></div>
+    <div class="footer__nav">
+      <div class="innert">
+        <ul class="listtype">
+          <li>
+            <a href="">화사소개</a>
+            <ul>
+              <li>CJ대한통운 스토리</li>
+              <li>스폰서십</li>
+              <li>마케팅 자료실</li>
+              <li>오시는 길</li>
+              <li>인재채용</li>
+              <li>투자정보</li>
+            </ul>
+          </li>
+          <li>
+            <a href="">뉴스룸</a>
+            <ul>
+              <li>뉴스</li>
+              <li>LATEST</li>
+              <li>공지사항</li>
+              <li>이벤트</li>
+            </ul>
+          </li>
+          <li>
+            <a href="">고객지원</a>
+            <ul>
+              <li>이용안내</li>
+              <li>자주묻는질문</li>
+              <li>1:1문의</li>
+            </ul>
+          </li>
+          <li>
+            <a href="">조회/예약</a>
+            <ul>
+              <li>택배조회</li>
+              <li>택배예약</li>
+              <li>특송조회</li>
+              <li>이사상담</li>
+              <li>챗봇상담</li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="listtype2">
+          <li>
+            <a href="">HELLO화물정보망</a>
+          </li>
+          <li>
+            <a href="">유록스 쇼핑몰</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
     <!-- footer main nav end -->
 
     <!-- footer link start -->
 
-    <div class="footer__link"></div>
+    <div class="footer__link">
+      <div class="inner1">
+        <a href="#" class="txt_link_foot">개인정보처리방침</a>
+        <a href="#" class="txt_link_foot">법적 고지</a>
+        <a href="#" class="txt_link_foot">약관 및 운영방침</a>
+        <a href="#" class="txt_link_foot">사이버감사실</a>
+        <a href="#" class="txt_link_foot">사이트맵</a>
+
+        <div class="sher_icon">
+          <span>Follow Us</span>
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+
+        <div class="footer_nav_btn">
+          <a href="#" class="bttn"
+            >그룹 계열사 바로가기 <span><i class="fas fa-bars"></i></span
+          ></a>
+        </div>
+      </div>
+    </div>
 
     <!-- footer link end -->
 
     <!-- footer address start -->
 
-    <div class="address"></div>
+    <div class="address">
+      <div class="adtxt">
+        <span class="lolo"></span>
+
+        <p class="txt__1">
+          CJ대한통운(주)사업자등록번호 : 110-81-05034 대표자: 박근희, 박근태,
+          김춘학 <br />주소 : 서울특별시 중구 세종대로 9길 53 택배고객센터 :
+          1588-1255 (월~금 09:00 ~ 18:00 / 토 09:00 ~ 13:00)
+        </p>
+        <p class="txt__2">
+          COPYRIGHT 2017 BY CJ Logistics Corporation ALL RIGHT RESERVED.
+        </p>
+
+        <img
+          src="https://www.cjlogistics.com/static/pc/global/template/images/logo/logo_ccm.jpg"
+          alt=""
+          width="80"
+          height="60"
+        />
+      </div>
+    </div>
 
     <!-- footer address end -->
 
+    <script src="js/022.js"></script>
     <script>
-      const hv = document.querySelector(".hidden__venner");
-      const hv2 = document.querySelector(".box__hiden__v");
-      const btn = hv.querySelector(".btn");
-
-      const hidden = () => {
-        hv.classList.add("hidden");
-        hv2.classList.add("hidden2");
-      };
-      btn.addEventListener("click", hidden);
+      $(function() {
+        $(".btn").on("click", function() {
+          $(".box__hiden__v").slideUp(500, "linear");
+        });
+      });
     </script>
   </body>
 </html>

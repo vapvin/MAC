@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <title>Document</title>
+
+    <style>
+      body {
+        padding: 150px;
+      }
+      .box {
+        width: 500px;
+        height: 250px;
+        background: #eaeaea;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <button class="btn1">Slide Up</button>
+      <button class="btn2">FadeIn</button>
+    </p>
+    <p>
+      <button class="btn3">SlideToggle</button>
+    </p>
+    <p>
+      <button class="btn4">FadeTo(0.3)</button>
+      <button class="btn5">FadeTo(1)</button>
+    </p>
+
+    <div class="box">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos sint
+        deleniti ad deserunt voluptates libero minima qui perferendis!
+        Voluptates vel perspiciatis sequi molestiae illum eius corrupti nulla
+        itaque quidem expedita. Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Quisquam minima ut voluptates exercitationem in et
+        fugiat tempora, vel debitis quod quasi temporibus ipsum quos aspernatur
+        beatae iste optio! Ipsam, pariatur. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Est sequi neque repellat hic, blanditiis
+        perferendis, numquam id illum nulla voluptatem sint saepe natus ratione
+        autem vero fuga, itaque fugiat nam? Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Accusamus repudiandae perferendis magnam
+        obcaecati nam eum expedita, illum tenetur distinctio reiciendis aliquam
+        eaque voluptas, animi vitae architecto numquam. Architecto, assumenda a!
+      </p>
+    </div>
+
+    <script>
+      $(function() {
+        $(".btn2").hide();
+        $(".btn5").hide();
+
+        $(".btn1").on("click", function() {
+          $(".box").slideUp(600, "linear", function() {
+            $(".btn1").hide();
+            $(".btn2").show();
+          });
+        });
+
+        $(".btn2").on("click", function() {
+          $(".box").fadeIn(1000, "linear", function() {
+            $(".btn2").hide();
+            $(".btn1").show();
+          });
+        });
+
+        $(".btn3").on("click", function() {
+          $(".box").slideToggle(1000, "linear");
+        });
+
+        $(".btn4").on("click", function() {
+          $(".box").fadeTo("slow", 0.3, function() {
+            $(".btn4").hide();
+            $(".btn5").show();
+          });
+        });
+
+        $(".btn5").on("click", function() {
+          $(".box").fadeTo("fast", 1, function() {
+            $(".btn5").hide();
+            $(".btn4").show();
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

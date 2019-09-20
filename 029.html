@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      .btn {
+        display: inline-block;
+        text-align: center;
+        line-height: 4rem;
+        width: 70px;
+        height: 70px;
+        padding: 0;
+        font-size: 2rem;
+        text-decoration: none;
+        color: khaki;
+        background: lightskyblue;
+      }
+
+      .btn:hover {
+        color: white;
+        background: #000;
+      }
+
+      .active {
+        color: white;
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+      </head>
+      <body>
+        <h1>Active Button</h1>
+        <p>Highlight the active/current (pressed) button.</p>
+
+        <a href="#" class="btn">1</a>
+        <a href="#" class="btn active">2</a>
+        <a href="#" class="btn">3</a>
+        <a href="#" class="btn">4</a>
+        <a href="#" class="btn">5</a>
+
+        <script>
+          const btns = document.getElementsByClassName("btn");
+          const cur = document.getElementsByClassName("active");
+          let i;
+
+          function active() {
+            cur[0].className = cur[0].className.replace("active", "");
+            this.className += " active";
+          }
+
+          for (i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", active);
+          }
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
