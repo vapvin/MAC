@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .wrap {
+        width: 100%;
+        height: 100vh;
+        background: #648d8b;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .box_con {
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      .btn {
+        width: 20%;
+        padding: 60px 20px;
+        border-radius: 50px;
+        margin: 20px 10px;
+        color: #648d8b;
+        font-size: 1.5rem;
+        border: 1px solid #648d8b;
+        outline: none;
+      }
+
+      .btn:nth-child(n + 9) {
+        position: relative;
+        overflow: hidden;
+      }
+
+      span {
+        background: #0497c2;
+        height: 100%;
+        width: 0;
+        display: flex;
+        overflow: hidden;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Creative jQuery</h1>
+    <div class="wrap">
+      <h2>BUTTON1</h2>
+      <div class="box_con">
+        <button class="btn">Albatross</button>
+        <button class="btn">Bishop</button>
+        <button class="btn">Canary</button>
+        <button class="btn">Duck</button>
+        <button class="btn">Eagle</button>
+        <button class="btn">Falcon</button>
+        <button class="btn">Goose</button>
+        <button class="btn">Hawk</button>
+        <button class="btn">Ibis<span>Ibis</span></button>
+        <button class="btn">Jaeger<span>Jaeger</span></button>
+        <button class="btn">Kingfisher<span>Kingfisher</span></button>
+        <button class="btn">Lark<span>Lark</span></button>
+      </div>
+    </div>
+
+    <script>
+      $(function() {
+        $(".btn:nth-child(-n+4)")
+          .on("mouseover", function() {
+            $(this)
+              .stop(true)
+              .animate(
+                {
+                  backgroundColor: "#0497C2",
+                  color: "#fff"
+                },
+                500
+              );
+          })
+          .on("mouseout", function() {
+            $(this)
+              .stop(true)
+              .animate(
+                {
+                  backgroundColor: "#fff",
+                  color: "#648D8B"
+                },
+                500
+              );
+          });
+
+        $(".btn:nth-child(n+5):nth-child(-n+8)")
+          .on("mouseover", function() {
+            $(this)
+              .stop(true)
+              .animate(
+                {
+                  borderWidth: "20px",
+                  borderColor: "#0497C2"
+                },
+                500
+              );
+          })
+          .on("mouseout", function() {
+            $(this)
+              .stop(true)
+              .animate(
+                {
+                  borderWidth: "1px",
+                  borderColor: "#648d8b"
+                },
+                500
+              );
+          });
+
+        $(".btn:nth-child(n + 9)")
+          .on("mouseover", function() {
+            $(this)
+              .find("span")
+              .stop(true)
+              .animate({ width: "100%" }, 500);
+          })
+          .on("mouseout", function() {
+            $(this)
+              .find("span")
+              .stop(true)
+              .animate({ width: "0%" }, 500);
+          });
+      });
+    </script>
+  </body>
+</html>
