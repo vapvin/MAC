@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .wrap {
+      width: 600px;
+      height: 800px;
+      background: #666;
+      margin: 0 auto;
+    }
+
+    header {
+      width: 100%;
+      baackground: #333;
+      overflow: hidden;
+    }
+
+    header h1 {
+      margin: 0;
+      display: inline-block;
+      float: left;
+    }
+
+    header span {
+      display: inline-block;
+      padding: 12px;
+      float: right;
+      background: #333;
+      padding: 20px 22px;
+      transform: rotate(90deg);
+    }
+
+    .nav_con {
+      display: none;
+      width: 100%;
+      top: 100%;
+      left: 0;
+      height: auto;
+    }
+
+    .show {
+      display: block;
+    }
+
+    .nav_con a {
+      display: inline-block;
+      width: 20%;
+      color: white;
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 40px;
+      text-decoration: none;
+    }
+  </style>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>LOGO</h1>
+        <span>|||</span>
+        <div class="nav_con">
+          <a href="#">NavLink</a>
+          <a href="#">NavLink</a>
+          <a href="#">NavLink</a>
+        </div>
+      </header>
+      <section>
+        <h2>Vertical Mobile Navbar</h2>
+        <p>
+          This example demonstrates how a navigation menu on a mobile/smart
+          phone could look like.
+        </p>
+        <p>
+          Click on the hamburger menu (three bars) in the top right corner, to
+          toggle the menu
+        </p>
+      </section>
+    </div>
+
+    <script>
+      const btn = document.querySelector("span");
+      const con = document.querySelector(".nav_con");
+      const SHOW = "show";
+
+      const shoing = () => con.classList.toggle(SHOW);
+      btn.addEventListener("click", shoing);
+    </script>
+  </body>
+</html>
