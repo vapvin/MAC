@@ -1,0 +1,130 @@
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Chapter 04-04 - jQuery 최고의 교과서</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="./js/main.js"></script>
+
+    <style>
+      html {
+        font-family: "Helvetica Neue", "Arial", "Hiragino Kaku Gothic ProN",
+          "Meiryo", sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      body {
+        background-color: #656565;
+      }
+
+      .main {
+        position: relative;
+      }
+
+      .main nav {
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 400px;
+        height: 100%;
+        top: 0;
+        left: -400px;
+        position: fixed;
+        padding: 30px 0 0 0;
+      }
+
+      .main > nav ul {
+        margin: 0 auto;
+        padding: 0;
+        top: 50px;
+        left: 50%;
+        transform:translateX(-50%)
+        position: absolute;
+      }
+
+      .main > nav li {
+        margin: 0 auto;
+        list-style: none;
+        overflow: hidden;
+        width: 250px;
+        height: 250px;
+        display: block;
+        border-radius: 50%;
+      }
+
+      .main > nav li img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .main > nav button {
+        background-color: rgba(0, 0, 0, 0.8);
+        display: block;
+        position: absolute;
+        top: 150px;
+        left: 400px;
+        width: 52px;
+        height: 132px;
+        margin: 0;
+        padding: 0;
+        border: none;
+        color:white;
+        outline:none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main" role="main">
+      <nav>
+        <ul>
+          <li>
+            <a href="#"
+              ><img
+                src="https://cdn.pixabay.com/photo/2016/10/03/17/11/cosmos-flower-1712177__340.jpg"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img
+                src="https://cdn.pixabay.com/photo/2016/10/03/17/11/cosmos-flower-1712177__340.jpg"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img
+                src="https://cdn.pixabay.com/photo/2016/10/03/17/11/cosmos-flower-1712177__340.jpg"
+            /></a>
+          </li>
+        </ul>
+        <button>
+          <span style="display:block;transform:rotate(90deg); font-size:1.5rem;"
+            >Open</span
+          >
+        </button>
+      </nav>
+    </div>
+
+    <script>
+      $(function() {
+        let duration = 300;
+
+        const $main = $(".main > nav");
+        const $mainButton = $main.find("button").on("click", function() {
+          $main.toggleClass("open");
+          if ($main.hasClass("open")) {
+            $main
+              .stop(true)
+              .animate({ left: "-70px" }, duration, "easeOutBack");
+            $mainButton.find("span").html("Close");
+          } else {
+            $main
+              .stop(true)
+              .animate({ left: "-400px" }, duration, "easeInBack");
+            $mainButton.find("span").html("Open");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
