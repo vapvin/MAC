@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <select id="rel_site">
+      <option value="">사이트 선택</option>
+      <option value="www.google.com">구글</option>
+      <option value="www.naver.com">네이버</option>
+      <option value="www.daum.net">다음</option>
+    </select>
+    <p class="txt"></p>
+
+    <script>
+      $(function() {
+        $("#rel_site").on("change", function() {
+          $(".txt").html(this.value);
+        });
+      });
+    </script>
+  </body>
+</html>

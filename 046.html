@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .videocon {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -9999;
+      }
+
+      .content {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .text_con {
+        font-size: 3rem;
+        line-height: 100px;
+        font-weight: 600;
+        color: white;
+        margin: 0;
+      }
+
+      .hexagon {
+        position: relative;
+        width: 150px;
+        height: 86.6px;
+        background-color: none
+        margin: 43.3px 0;
+        border-left: solid 1px #b6b6b6; /* 외곽라인 두께및 색상 */
+        border-right: solid 1px #b6b6b6; /* 외곽라인 두께및 색상 */
+        float: left;
+      }
+
+      .hexagon:before,
+      .hexagon:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 106.07px;
+        height: 106.07px;
+        -webkit-transform: scaleY(0.5774) rotate(-45deg);
+        -ms-transform: scaleY(0.5774) rotate(-45deg);
+        transform: scaleY(0.5774) rotate(-45deg);
+        background-color: inherit;
+        left: 20.967px;
+      }
+
+      .hexagon:before {
+        top: -53.033px;
+        border-top: solid 1.4142px #b6b6b6; /* 외곽라인 두께및 색상 */
+        border-right: solid 1.4142px #b6b6b6; /* 외곽라인 두께및 색상 */
+      }
+
+      .hexagon:after {
+        bottom: -53.033px;
+        border-bottom: solid 1.4142px #b6b6b6; /* 외곽라인 두께및 색상 */
+        border-left: solid 1.4142px #b6b6b6; /* 외곽라인 두께및 색상 */
+      }
+
+      .hexahon_inner {
+        display:block;
+        position: absolute;
+        width: 150px;
+        height: 86.6px;
+        background-color: none
+        margin: 43.3px 0;
+        border-left: solid 1px #b6b6b6; /* 외곽라인 두께및 색상 */
+        border-right: solid 1px #b6b6b6; /* 외곽라인 두께및 색상 */
+        float: left;
+      }
+
+      .hexahon_inner:before,
+      .hexahon_inner:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 106.07px;
+        height: 106.07px;
+        -webkit-transform: scaleY(0.5774) rotate(-45deg);
+        -ms-transform: scaleY(0.5774) rotate(-45deg);
+        transform: scaleY(0.5774) rotate(-45deg);
+        background-color: inherit;
+        left: 20.967px;
+      }
+
+      .hexahon_inner:before {
+        top: -53.033px;
+        border-top: solid 1.4142px #b6b6b6; /* 외곽라인 두께및 색상 */
+        border-right: solid 1.4142px #b6b6b6; /* 외곽라인 두께및 색상 */
+      }
+
+      .hexahon_inner:after {
+        bottom: -53.033px;
+        border-bottom: solid 1.4142px #b6b6b6; /* 외곽라인 두께및 색상 */
+        border-left: solid 1.4142px #b6b6b6; /* 외곽라인 두께및 색상 */
+      }
+
+      .hexahon_inner:first-child {
+          top:-230px;
+      }
+
+      .hexahon_inner:nth-child(2) {
+        top:-80px;
+        left:220px;
+      }
+      .hexahon_inner:nth-child(3) {
+          top:-80px;
+          left:-220px;
+      }
+
+      .hexahon_inner:nth-child(4) {
+      bottom:-180px;
+      left:-150px;
+       }
+
+      .hexahon_inner:nth-child(5) {
+        bottom:-180px;
+        left:150px;
+      }
+
+      .line {
+          display:block;
+             position:absolute;
+             height: 30px;
+             width: 2px;
+             background: #b6b6b6;
+      }
+
+      .line:nth-child(1) {
+        top:330px;
+      }
+
+      .line:nth-child(2) {
+        left:600px;
+        transform:rotate(-65deg)
+      }
+
+      .line:nth-child(3) {
+        right:600px;
+        transform:rotate(65deg)
+      }
+
+      .line:nth-child(4) {
+        left:640px;
+        bottom:360px;
+        transform:rotate(45deg)
+      }
+
+      .line:nth-child(5) {
+        right:640px;
+        bottom:360px;
+        transform:rotate(-45deg)
+      }
+    </style>
+  </head>
+  <body>
+    <video autoplay muted loop class="videocon">
+      <source src="video/Background - 9584.mp4" type="video/mp4" />
+    </video>
+
+    <div class="content">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      <div class="hexagon">
+        <span class="hexahon_inner"></span>
+        <span class="hexahon_inner"></span>
+        <span class="hexahon_inner"></span>
+        <span class="hexahon_inner"></span>
+        <span class="hexahon_inner"></span>
+      </div>
+    </div>
+  </body>
+</html>

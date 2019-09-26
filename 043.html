@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <style>
+      body {
+        font-family: Arial;
+        font-size: 16px;
+        line-height: 1.5;
+        background: #eaeaea;
+        color: black;
+        min-width: 960px;
+        padding-top: 240px;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding-left: 0;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      img {
+        vertical-align: middle;
+      }
+
+      .dummy {
+        margin: 0 auto;
+        max-width: 512px;
+        padding: 96px 0;
+      }
+
+      .page-header {
+        background: #fff;
+        position: absolute;
+        width: 100%;
+        min-width: 960px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+      }
+
+      .page-header.sticky {
+        position: fixed;
+        top: 0;
+      }
+
+      .page-header > inner {
+        margin: auto;
+        width: 960px;
+      }
+
+      .page-header {
+        border-bottom: 1px solid rgb(204, 204, 204);
+      }
+
+      .site-logo {
+        float: left;
+        margin-left: -20px;
+      }
+
+      .primary-nav li {
+        float: left;
+      }
+
+      .primary-nav li a {
+        display: block;
+        padding: 0 22px;
+      }
+
+      .primary-nav li a:hover {
+        background: rgb(240, 240, 240);
+      }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <meta charset="UTF-8" />
+    <title>스티키 헤더</title>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="inner">
+        <h1 class="site-logo">
+          <a href="#"><img src="logo.png" alt=""/></a>
+        </h1>
+        <nav class="primary-nav">
+          <ul>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">JAVASCRIPT</a></li>
+            <li><a href="#">jQuery</a></li>
+            <li><a href="#">Portfolio</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="dummy">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ex
+        perferendis enim deserunt, sapiente saepe, quidem, dolorum fugiat vitae
+        culpa earum eius, similique facilis aspernatur at autem odit fugit
+        mollitia.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Adipisci ex perferendis enim deserunt, sapiente saepe, quidem, dolorum
+        fugiat vitae culpa earum eius, similique facilis aspernatur at autem
+        odit fugit mollitia.Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Adipisci ex perferendis enim deserunt, sapiente saepe, quidem,
+        dolorum fugiat vitae culpa earum eius, similique facilis aspernatur at
+        autem odit fugit mollitia.Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Adipisci ex perferendis enim deserunt, sapiente saepe,
+        quidem, dolorum fugiat vitae culpa earum eius, similique facilis
+        aspernatur at autem odit fugit mollitia.Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Adipisci ex perferendis enim deserunt,
+        sapiente saepe, quidem, dolorum fugiat vitae culpa earum eius, similique
+        facilis aspernatur at autem odit fugit mollitia.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ex
+        perferendis enim deserunt, sapiente saepe, quidem, dolorum fugiat vitae
+        culpa earum eius, similique facilis aspernatur at autem odit fugit
+        mollitia.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Adipisci ex perferendis enim deserunt, sapiente saepe, quidem, dolorum
+        fugiat vitae culpa earum eius, similique facilis aspernatur at autem
+        odit fugit mollitia.Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Adipisci ex perferendis enim deserunt, sapiente saepe, quidem,
+        dolorum fugiat vitae culpa earum eius, similique facilis aspernatur at
+        autem odit fugit mollitia.Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Adipisci ex perferendis enim deserunt, sapiente saepe,
+        quidem, dolorum fugiat vitae culpa earum eius, similique facilis
+        aspernatur at autem odit fugit mollitia.Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Adipisci ex perferendis enim deserunt,
+        sapiente saepe, quidem, dolorum fugiat vitae culpa earum eius, similique
+        facilis aspernatur at autem odit fugit mollitia.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ex
+        perferendis enim deserunt, sapiente saepe, quidem, dolorum fugiat vitae
+        culpa earum eius, similique facilis aspernatur at autem odit fugit
+        mollitia.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Adipisci ex perferendis enim deserunt, sapiente saepe, quidem, dolorum
+        fugiat vitae culpa earum eius, similique facilis aspernatur at autem
+        odit fugit mollitia.Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Adipisci ex perferendis enim deserunt, sapiente saepe, quidem,
+        dolorum fugiat vitae culpa earum eius, similique facilis aspernatur at
+        autem odit fugit mollitia.Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Adipisci ex perferendis enim deserunt, sapiente saepe,
+        quidem, dolorum fugiat vitae culpa earum eius, similique facilis
+        aspernatur at autem odit fugit mollitia.Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Adipisci ex perferendis enim deserunt,
+        sapiente saepe, quidem, dolorum fugiat vitae culpa earum eius, similique
+        facilis aspernatur at autem odit fugit mollitia.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ex
+        perferendis enim deserunt, sapiente saepe, quidem, dolorum fugiat vitae
+        culpa earum eius, similique facilis aspernatur at autem odit fugit
+        mollitia.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Adipisci ex perferendis enim deserunt, sapiente saepe, quidem, dolorum
+        fugiat vitae culpa earum eius, similique facilis aspernatur at autem
+        odit fugit mollitia.Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Adipisci ex perferendis enim deserunt, sapiente saepe, quidem,
+        dolorum fugiat vitae culpa earum eius, similique facilis aspernatur at
+        autem odit fugit mollitia.Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Adipisci ex perferendis enim deserunt, sapiente saepe,
+        quidem, dolorum fugiat vitae culpa earum eius, similique facilis
+        aspernatur at autem odit fugit mollitia.Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Adipisci ex perferendis enim deserunt,
+        sapiente saepe, quidem, dolorum fugiat vitae culpa earum eius, similique
+        facilis aspernatur at autem odit fugit mollitia.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ex
+        perferendis enim deserunt, sapiente saepe, quidem, dolorum fugiat vitae
+        culpa earum eius, similique facilis aspernatur at autem odit fugit
+        mollitia.Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Adipisci ex perferendis enim deserunt, sapiente saepe, quidem, dolorum
+        fugiat vitae culpa earum eius, similique facilis aspernatur at autem
+        odit fugit mollitia.Lorem ipsum dolor sit amet, consectetur adipisicing
+        elit. Adipisci ex perferendis enim deserunt, sapiente saepe, quidem,
+        dolorum fugiat vitae culpa earum eius, similique facilis aspernatur at
+        autem odit fugit mollitia.Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Adipisci ex perferendis enim deserunt, sapiente saepe,
+        quidem, dolorum fugiat vitae culpa earum eius, similique facilis
+        aspernatur at autem odit fugit mollitia.Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit. Adipisci ex perferendis enim deserunt,
+        sapiente saepe, quidem, dolorum fugiat vitae culpa earum eius, similique
+        facilis aspernatur at autem odit fugit mollitia.
+      </p>
+    </div>
+    <script>
+      $(function() {
+        $(".page-header").each(function() {
+          const $window = $(window), //창을 제이쿼리로 오브젝트화 시키는 과정
+            $header = $(this); // 헤더를 제이쿼리 객체(모든사물과 비교가능)화시키는과정
+
+          headerOffsetTop = $header.offset().top;
+          // 헤더의 기본위치를 검색하는 과정
+
+          $window.on("scroll", function() {
+            if ($window.scrollTop() > headerOffsetTop) {
+              $header.addClass("sticky");
+            } else {
+              $header.removeClass("sticky");
+            } // 윈도우의 스크롤량을 확인하고 헤더의 기본 위치를 넘어서 있으면 클래스를 부여하고 그렇지 않을경우에는 삭제해라......
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

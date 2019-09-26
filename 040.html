@@ -19,26 +19,26 @@
     </style>
   </head>
   <body>
-    <button>버튼1</button>
+    <button class="btn1">버튼1</button>
     <span>내용1</span>
-    <button class="btn">버튼2</button>
-    <span class="txt">내용2</span>
+    <button class="btn2">버튼2</button>
+    <span>내용2</span>
 
     <script>
       $(function() {
-        $("button:first-child").on("click", function() {
+        $(".btn1").on("click", function() {
           $(this)
             .next()
             .toggleClass("redcol");
         });
 
-        $(".btn").on({
-          "mouseover focusin": function() {
+        $(".btn2").on({
+          "mouseover focus": function() {
             $(this)
               .next()
               .css({ color: "steelblue" });
           },
-          "mouseout focusout": function() {
+          "mouseout blur": function() {
             $(this)
               .next()
               .css({ color: "black" });

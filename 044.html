@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>focus / blur</h1>
+    <form action="#" id="frm_1">
+      <p>
+        <label for="user_id_1">ID</label>
+        <input type="text" name="user_id_1" id="user_id_1" />
+      </p>
+      <p>
+        <label for="user_pw_1">PW</label>
+        <input type="password" name="user_pw_1" id="user_pw_1" />
+      </p>
+    </form>
+    <h1>focusin / focusout</h1>
+    <form action="#" id="frm_2">
+      <p>
+        <label for="user_id_2">ID</label>
+        <input type="text" name="user_id_2" id="user_id_2" />
+      </p>
+      <p>
+        <label for="user_pw_2">PW</label>
+        <input type="password" name="user_pw_2" id="user_pw_2" />
+      </p>
+    </form>
+
+    <script>
+      $(function() {
+        $("#frm_1")
+          .find("input")
+          .on("focus", function() {
+            $(this).css({ backgroundColor: "pink" });
+          })
+          .on("blur", function() {
+            $(this).css({ backgroundColor: "white" });
+          });
+
+        $("#frm_2")
+          .on("focusin", function() {
+            $(this).css({ backgroundColor: "pink" });
+          })
+          .on("focusout", function() {
+            $(this).css({ backgroundColor: "white" });
+          });
+      });
+    </script>
+  </body>
+</html>
