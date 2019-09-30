@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>선택자</h1>
+    <div>
+      <div>
+        <p class="txt1">내용</p>
+      </div>
+    </div>
+
+    <script>
+      $(function() {
+        const style_1 = {
+          border: "2px solid red"
+        };
+
+        $(".txt1")
+          .closest("div")
+          .css(style_1);
+      });
+    </script>
+  </body>
+</html>

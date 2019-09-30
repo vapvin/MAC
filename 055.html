@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <title>Document</title>
+
+    <style>
+      .green {
+        background: green;
+      }
+      .red {
+        background: red;
+      }
+
+      .blue {
+        background: deepskyblue;
+      }
+      .yellow {
+        background: yellow;
+      }
+
+      .fal {
+        background: steelblue;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">Click</button>
+    <p class="txt1">content1</p>
+    <p class="txt2 red">content2</p>
+    <p class="txt3">content3</p>
+    <p class="txt4 green">content4</p>
+    <p class="txt5">content5</p>
+    <p class="txt6">true</p>
+
+    <script>
+      $(function() {
+        $(".btn").on("click", function() {
+          $(".txt1").addClass("green");
+          $(".txt2").removeClass("red");
+          $(".txt3").toggleClass("blue");
+          $(".txt4").toggleClass("yellow");
+          $(".txt5").toggleClass("fal");
+          if ($(".txt5").hasClass("fal")) {
+            $(".txt6").html("False");
+          } else {
+            $(".txt6").html("True");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

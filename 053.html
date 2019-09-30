@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <h1>탐색 선택자</h1>
+    <ul>
+      <li>cont</li>
+      <li>cont</li>
+      <li>cont</li>
+    </ul>
+    <ul>
+      <li>cont</li>
+      <li>cont</li>
+      <li>cont</li>
+    </ul>
+
+    <script>
+      $(function() {
+        $("li:first-of-type").css({ background: "steelblue" });
+        $("li:last-of-type").css({ background: "red" });
+      });
+    </script>
+  </body>
+</html>
