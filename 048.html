@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <p class="txt1">내용</p>
+    <p class="txt">내용</p>
+    <script>
+      $(function() {
+        $("p")
+          .animate({ "margin-left": "200px" }, 1000)
+          .animate({ "margin-left": "400px" }, 1000)
+          .animate({ "margin-left": "600px" }, 1000)
+          .animate({ "margin-left": "800px" }, 1000);
+        $(".txt1").clearQueue();
+      });
+    </script>
+  </body>
+</html>

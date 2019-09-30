@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Documnet</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <style>
+      .cl {
+        margin-bottom: 10px;
+      }
+      .con {
+        max-width: 600px;
+        height: 50px;
+        border: 1px solid #000;
+        padding: 0;
+      }
+      .txt {
+        width: 10%;
+        height: 100%;
+        text-align: center;
+        background: steelblue;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="cl">
+      <button class="back">Back</button>
+      <button class="go">Go</button>
+    </p>
+    <div class="con">
+      <p class="txt">ddd</p>
+    </div>
+
+    <script>
+      $(function() {
+        const txt = $(".txt");
+        let count = 1;
+        $(".cl button").on("click", function() {
+          if (!txt.is(":animated")) {
+            if ($(this).hasClass("back")) {
+              count--;
+              if (count < 1) {
+                count = 1;
+                return false;
+              }
+              txt.animate({ marginLeft: "-=10%" }, 500);
+            } else {
+              count++;
+              if (count > 10) {
+                count = 10;
+                return false;
+              }
+              txt.animate({ marginLeft: "+=10%" }, 500);
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
