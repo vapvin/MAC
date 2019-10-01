@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <p>텍스트, <a href="#">a링크</a>, 테스트 텍스트</p>
+
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Aenean nec mollis jb nulla.</p>
+    <p>Phasellus JB lacinia tempus mauris eu laoreet.</p>
+    <p>Proin gravida velit dictum jdui consequat.</p>
+
+    <script>
+      $(function() {
+        $("p")
+          .contents()
+          .css({ color: "red", textDecoration: "none" }); // p 요소의 자식요소(text 포함)를 가져와 red 색상으로 변경
+
+        $('p:contains("jb")').css("color", "red");
+        $('p:contains("dictum")').css("color", "steelblue");
+      });
+    </script>
+  </body>
+</html>

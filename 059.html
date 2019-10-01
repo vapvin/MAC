@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #box_wrap {
+        width: 300px;
+        height: 200px;
+        margin: 50px auto 0;
+        position: relative;
+        background: #ccc;
+      }
+      .box {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        left: 100px;
+        top: 50px;
+        background: #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box_wrap">
+      <p class="box"></p>
+    </div>
+
+    <p class="txt_1">절대 TOP 위치값: <span></span></p>
+    <p class="txt_2">상대 TOP 위치값: <span></span></p>
+
+    <script>
+      $(function() {
+        const txt_of = $(".box").offset().top;
+        const txt_po = $(".box").position().top;
+
+        $(".txt_1 > span").html(txt_of);
+        $(".txt_2 > span").html(txt_po);
+      });
+    </script>
+  </body>
+</html>
