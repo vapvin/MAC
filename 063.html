@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <p><input type="text" id="user_id" /></p>
+
+    <script>
+      $(function() {
+        $(document).on("keydown", keyEventFunction);
+
+        function keyEventFunction(e) {
+          let direct = "";
+
+          switch (e.keyCode) {
+            case 37:
+              direct = "LEFT";
+              break;
+            case 38:
+              direct = "TOP";
+              break;
+            case 39:
+              direct = "RIGHT";
+              break;
+            case 40:
+              direct = "BOTTOM";
+              break;
+          }
+
+          if (direct) {
+            $("#user_id").val(direct);
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

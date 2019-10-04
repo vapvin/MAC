@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style type="text/css">
+      .css_test {
+        border: 5px solid gray;
+        border-radius: 5px;
+        padding: 5px;
+      }
+      .css_test img {
+        position: relative; /* 이미지에 애니메이션 효과를 주기위해 설정 */
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    개를 클릭하면 점프합니다.<br /><br />
+
+    <div class="css_test">
+      <img src="img/dog1.jpeg" width="100%" />
+      <img src="img/cats.jpg" />
+      <img src="img/dog2.png" />
+      <img src="img/dog1.jpeg" />
+      <img src="img/cats.jpg" />
+      <img src="img/dog2.png" />
+    </div>
+
+    <script>
+      // 이미지에 클릭이벤트 생성
+      $(".css_test img").bind("click", function() {
+        j_test(this);
+      });
+
+      function j_test(o) {
+        if ($(o).is("[src*=dog]")) {
+          // 클릭한 이미지 경로에 dog 가 있을 경우
+          $(o).animate({ top: -100 }, 200, function() {
+            $(this).animate({ top: 0 }, 100);
+          });
+        } else {
+          // 없는 경우
+          $(o).animate({ left: -10 }, 500, "easeOutElastic", function() {
+            $(this).animate({ left: 0 }, 200);
+          });
+        }
+      }
+    </script>
+  </body>
+</html>
