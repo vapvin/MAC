@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      body {
+        margin: 0;
+      }
+      section {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #ccc;
+        position: relative;
+      }
+      main {
+        height: 100vh;
+        overflow: hidden;
+      }
+      section:nth-child(2) {
+        background: blueviolet;
+      }
+      section:nth-child(3) {
+        background: yellowgreen;
+      }
+      .nav {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+      }
+      .text {
+        position: absolute;
+        left: 20%;
+        opacity: 0;
+        transform: translateY(100px);
+        transition: all 0.5s 0.5s;
+      }
+      .text.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      button {
+        font-size: 14px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="content">
+        <section>
+          <div class="text">
+            <h3>첫번째 페이지</h3>
+            <p>컨텐츠</p>
+          </div>
+        </section>
+        <section>
+          <div class="text">
+            <h3>두번째 페이지</h3>
+            <p>컨텐츠</p>
+          </div>
+        </section>
+        <section>
+          <div class="text">
+            <h3>세번째 페이지</h3>
+            <p>컨텐츠</p>
+          </div>
+        </section>
+        <section>
+          <div class="text">
+            <h3>Quam hic dicta</h3>
+            <p>컨텐츠</p>
+          </div>
+        </section>
+      </div>
+      <div class="nav">
+        <button class="prev"><</button>
+        <button class="next">></button>
+      </div>
+    </main>
+
+    <script>
+      const content = document.querySelectorAll("section");
+      const prev = document.querySelector(".prev");
+      const next = document.querySelector(".next");
+      const idlePeriod = 100;
+      const animationDuration = 1000;
+
+      let lastAnimation = 0;
+      let index = 0;
+
+      const toggleText = (index, state) => {
+        if (state === "show") {
+          content[index].querySelector(".text").classList.add("show");
+        } else {
+          content[index].querySelector(".text").classList.remove("show");
+        }
+      };
+
+      toggleText(0, "show");
+
+      prev.addEventListener("click", () => {
+        if (index < 1) return;
+        toggleText(index, "hide");
+        index--;
+
+        content.forEach((section, i) => {
+          if (i === index) {
+            toggleText(i, "show");
+            section.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      next.addEventListener("click", () => {
+        if (index > 2) return;
+        toggleText(index, "hide");
+        index++;
+        content.forEach((section, i) => {
+          if (i === index) {
+            toggleText(i, "show");
+            section.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+
+      document.addEventListener("wheel", event => {
+        var delta = event.wheelDelta;
+        var timeNow = new Date().getTime();
+        // Cancel scroll if currently animating or within quiet period
+        if (timeNow - lastAnimation < idlePeriod + animationDuration) {
+          event.preventDefault();
+          return;
+        }
+
+        if (delta < 0) {
+          var event = new Event("click");
+          next.dispatchEvent(event);
+        } else {
+          var event = new Event("click");
+          prev.dispatchEvent(event);
+        }
+
+        lastAnimation = timeNow;
+      });
+    </script>
+  </body>
+</html>
