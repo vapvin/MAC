@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+
+        }
+
+        #container div {
+            width: 200px;
+            background: #fff;
+            box-shadow:0px 1px 1px #aaa;
+            padding:15px;
+            padding-bottom:15px;
+            margin:15px;
+        }
+
+        #container div img {
+            width:100%;
+            padding-bottom: 15px;
+            margin-bottom: 5px;
+        }
+
+        #container div h1 {
+            font-size:1rem;
+            color:#0d2dff;
+
+        }
+
+        #container div p {
+            font-family: 맑은고딕;
+            font-size:14px;
+            color: #222;
+            margin:0;
+            padding: 10;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <img src="images/tr1.jpg" alt="">
+            <h1>발리 어쩌구 저쩌구/h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ratione error voluptate consequuntur exercitationem, soluta ipsam rem. Quae numquam minus animi laborum est veniam perferendis aspernatur adipisci distinctio, ipsum consectetur?</p>
+        </div>
+        <div>
+            <img src="images/tr2.jpg" alt="">
+            <h1>발리 어쩌구 저쩌구/h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ratione error voluptate consequuntur exercitationem, soluta ipsam rem. Quae numquam minus animi laborum est veniam perferendis aspernatur adipisci distinctio, ipsum consectetur?</p>
+        </div>
+        <div>
+            <img src="images/tr3.jpg" alt="">
+            <h1>발리 어쩌구 저쩌구/h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ratione error voluptate consequuntur exercitationem, soluta ipsam rem. Quae numquam minus animi laborum est veniam perferendis aspernatur adipisci distinctio, ipsum consectetur?</p>
+        </div>
+        <div>
+            <img src="images/tr4.jpg" alt="">
+            <h1>발리 어쩌구 저쩌구/h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ratione error voluptate consequuntur exercitationem, soluta ipsam rem. Quae numquam minus animi laborum est veniam perferendis aspernatur adipisci distinctio, ipsum consectetur?</p>
+        </div>
+        <div>
+            <img src="images/tr1.jpg" alt="">
+            <h1>발리 어쩌구 저쩌구/h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ratione error voluptate consequuntur exercitationem, soluta ipsam rem. Quae numquam minus animi laborum est veniam perferendis aspernatur adipisci distinctio, ipsum consectetur?</p>
+        </div>
+        <div>
+            <img src="images/tr2.jpg" alt="">
+            <h1>발리 어쩌구 저쩌구/h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ratione error voluptate consequuntur exercitationem, soluta ipsam rem. Quae numquam minus animi laborum est veniam perferendis aspernatur adipisci distinctio, ipsum consectetur?</p>
+        </div>
+        <div>
+            <img src="images/tr3.jpg" alt="">
+            <h1>발리 어쩌구 저쩌구/h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ratione error voluptate consequuntur exercitationem, soluta ipsam rem. Quae numquam minus animi laborum est veniam perferendis aspernatur adipisci distinctio, ipsum consectetur?</p>
+        </div>
+        <div>
+            <img src="images/tr4.jpg" alt="">
+            <h1>발리 어쩌구 저쩌구/h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas ratione error voluptate consequuntur exercitationem, soluta ipsam rem. Quae numquam minus animi laborum est veniam perferendis aspernatur adipisci distinctio, ipsum consectetur?</p>
+        </div>
+    </div>
+
+    <script src="js/jquery.vgrid.min.js"></script>
+
+    <script>
+        $("#container").vgrid({
+            time:400,
+            delay:30,
+            wait:500
+        });
+    </script>
+</body>
+</html>

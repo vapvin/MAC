@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <title>Document</title>
+    <style>
+      body {
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="zoomBtnZone">
+      <button class="zoomOutBtn">-</button>
+      <button class="">100%</button>
+      <button class="zoomInBtn">+</button>
+    </p>
+    <p class="fontSize">14px</p>
+    <div id="wrapper">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe officiis
+        impedit repellendus totam nam molestias optio dicta quam cupiditate
+        tempora earum libero autem quidem, non inventore itaque, perferendis
+        voluptatibus voluptas.
+      </p>
+    </div>
+    <script>
+      $(() => {
+        let baseFontSize = 14;
+
+        $(".zoomBtnZone button").on("click", zoomInOut);
+
+        function zoomInOut() {
+          if ($(this).hasClass("zoomOutBtn")) {
+            if (baseFontSize == 8) {
+              return false;
+            }
+            baseFontSize--;
+          } else if ($(this).hasClass("zoomInBtn")) {
+            if (baseFontSize == 20) {
+              return false;
+            }
+            baseFontSize++;
+          } else {
+            baseFontSize = 14;
+          }
+
+          $(".fontSize").text(baseFontSize + "px");
+          $("body").css({ fontSize: baseFontSize + "px" });
+        }
+      });
+    </script>
+  </body>
+</html>

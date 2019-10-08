@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <span>첫번째</span>
+      <span>두번째</span>
+      <span>세번째</span>
+    </div>
+
+    <script>
+      $("div")
+        .find("span")
+        .each(function(i, e) {
+          console.log($(this).text());
+        });
+    </script>
+  </body>
+</html>
