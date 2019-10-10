@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+
+    <style>
+      @import url("http://fonts.googleapis.com/css?family=Courgette");
+      #content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      h1 {
+        color: #aff500;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 2rem;
+        font-style: italic;
+        text-shadow: 2px 2px 3px #222, 2px 2px 3px black;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="header">
+        <div id="content">
+          <h1>Startup Company</h1>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(() => {
+        $.backstretch(
+          ["img/office-1.jpg", "img/office-2.jpg", "img/office-3.jpg"],
+          { duration: 3500, fade: 750 }
+        );
+      });
+    </script>
+  </body>
+</html>
