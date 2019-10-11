@@ -144,30 +144,6 @@
       .grid__item:last-child {
         background-color: var(--colorSeven);
       }
-
-      .slide_container {
-        width: 100%;
-        overflow: hidden;
-        margin-bottom: 20px;
-      }
-
-      .slide_content {
-        width: 100%;
-        height: 500px;
-        position: relative;
-      }
-
-      .slide_content .img {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        transition: 0.7s;
-      }
-
-      .showing {
-        opacity: 1;
-        z-index: 999;
-      }
     </style>
   </head>
   <body>
@@ -197,30 +173,6 @@
       </div>
     </header>
 
-    <div class="slide_container">
-      <div class="slide_content">
-        <div
-          class="img"
-          style="background:url(img/1.jpg); background-size:cover;"
-        ></div>
-        <div
-          class="img"
-          style="background:url(img/2.jpg); background-size:cover;"
-        ></div>
-        <div
-          class="img"
-          style="background:url(img/3.jpg); background-size:cover;"
-        ></div>
-        <div
-          class="img"
-          style="background:url(img/4.jpg); background-size:cover;"
-        ></div>
-        <div
-          class="img"
-          style="background:url(img/5.jpg); background-size:cover;"
-        ></div>
-      </div>
-    </div>
     <main class="grid threeGrid">
       <div class="grid__item"></div>
       <div class="grid__item"></div>
@@ -238,26 +190,5 @@
       <div class="grid__item"></div>
       <div class="grid__item"></div>
     </main>
-
-    <script>
-      const SHOWING_CLASS = "showing";
-      const firstSlide = document.querySelector(".img:first-child");
-      function slide() {
-        const currentSlide = document.querySelector(`.${SHOWING_CLASS}`);
-        if (currentSlide) {
-          currentSlide.classList.remove(SHOWING_CLASS);
-          const nextSlide = currentSlide.nextElementSibling;
-          if (nextSlide) {
-            nextSlide.classList.add(SHOWING_CLASS);
-          } else {
-            firstSlide.classList.add(SHOWING_CLASS);
-          }
-        } else {
-          firstSlide.classList.add(SHOWING_CLASS);
-        }
-      }
-      slide();
-      setInterval(slide, 3000);
-    </script>
   </body>
 </html>
