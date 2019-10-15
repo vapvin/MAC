@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #wrap {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+      }
+
+      .items {
+        padding: 16px;
+      }
+
+      .items:nth-child(odd) {
+        background: steelblue;
+      }
+
+      .items:nth-child(even) {
+        background: dodgerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="items">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam quae
+        vitae hic nisi architecto doloribus! Praesentium in a harum quidem.
+      </div>
+      <div class="items">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam quae
+        vitae hic nisi architecto doloribus! Praesentium in a harum quidem.
+      </div>
+      <div class="items">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam quae
+        vitae hic nisi architecto doloribus! Praesentium in a harum quidem.
+      </div>
+      <div class="items">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam quae
+        vitae hic nisi architecto doloribus! Praesentium in a harum quidem.
+      </div>
+    </div>
+  </body>
+</html>
