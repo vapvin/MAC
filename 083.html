@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      nav {
+        position: relative;
+        width: 100%;
+        height: 10vh;
+        background: #ddd;
+      }
+      .modaloverlay1,
+      .modaloverlay2 {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 90vh;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+      }
+
+      .modal_content1,
+      .modal_content2 {
+        width: 50%;
+        height: 50%;
+        background: #fff;
+        margin: auto;
+      }
+
+      .showing {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <button class="btn1">Modal1</button>
+      <button class="btn2">Modal2</button>
+
+      <div class="modaloverlay1">
+        <div class="modal_content1">
+          <h2>This Modal</h2>
+        </div>
+      </div>
+      <div class="modaloverlay2">
+        <div class="modal_content2"><h2>Other Modal</h2></div>
+      </div>
+    </nav>
+
+    <script>
+      var modal1 = document.querySelector(".modaloverlay1"),
+        modal2 = document.querySelector(".modaloverlay2");
+
+      var btn1 = document.querySelector(".btn1");
+      var btn2 = document.querySelector(".btn2");
+
+      var SHOWING_CLASS = "showing";
+
+      btn1.addEventListener("click", () => {
+        modal1.classList.toggle(SHOWING_CLASS);
+      });
+
+      btn2.addEventListener("click", () => {
+        modal2.classList.toggle(SHOWING_CLASS);
+      });
+    </script>
+  </body>
+</html>
