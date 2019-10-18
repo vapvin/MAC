@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+
+    <style>
+      .wrap {
+        position: relative;
+        width: 100%;
+        height: 500px;
+      }
+      #video-bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+      }
+      #video-bg > video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      @media (max-width: 700px) {
+        .wrap {
+          height: 1000px;
+        }
+      }
+      @media (min-aspect-ratio: 16/9) {
+        #video-bg > video {
+          height: 300%;
+          top: -100%;
+        }
+      }
+      @media (max-aspect-ratio: 16/9) {
+        #video-bg > video {
+          width: 300%;
+          left: -100%;
+        }
+      }
+      @supports (object-fit: cover) {
+        #video-bg > video {
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div id="video-bg">
+        <video autoplay muted loop>
+          <source
+            type="video/mp4"
+            src="https://www.w3schools.com/howto/rain.mp4"
+            media="(orientation:landscape)"
+          />
+        </video>
+      </div>
+    </div>
+  </body>
+</html>
