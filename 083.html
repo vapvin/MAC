@@ -57,13 +57,13 @@
     </nav>
 
     <script>
-      var modal1 = document.querySelector(".modaloverlay1"),
+      const modal1 = document.querySelector(".modaloverlay1"),
         modal2 = document.querySelector(".modaloverlay2");
 
-      var btn1 = document.querySelector(".btn1");
-      var btn2 = document.querySelector(".btn2");
+      const btn1 = document.querySelector(".btn1");
+      const btn2 = document.querySelector(".btn2");
 
-      var SHOWING_CLASS = "showing";
+      const SHOWING_CLASS = "showing";
 
       btn1.addEventListener("click", () => {
         modal1.classList.toggle(SHOWING_CLASS);
