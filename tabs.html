@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tabs</title>
+    <link rel="stylesheet" type="text/css" href="css.css" />
+  </head>
+  <body style="padding: 20px">
+    <h1 class="title">Tabs</h1>
+    <div class="tabContainer">
+      <div class="buttonContainer">
+        <button class="btn btns" onclick="showPlace(0)">Tab 1</button>
+        <button class="btn" onclick="showPlace(1)">Tab 2</button>
+      </div>
+
+      <div class="tabPanel tabs">Tab 1:Content</div>
+      <div class="tabPanel">Tab 2:Content</div>
+    </div>
+
+    <script>
+      var tabButtons = document.querySelectorAll(".btn");
+      var tabPanels = document.querySelectorAll(".tabPanel");
+
+      function showPlace(n) {
+        currentTabs = document.querySelector(".tabs");
+        currentBtns = document.querySelector(".btns");
+
+        if (currentTabs) {
+          currentTabs.classList.remove("tabs");
+          currentBtns.classList.remove("btns");
+        }
+
+        tabPanels[n].classList.add("tabs");
+        tabButtons[n].classList.add("btns");
+      }
+    </script>
+  </body>
+</html>

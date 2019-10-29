@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Web Design Slide Pr</title>
+    <style>
+      @charset "utf-8";
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Arial";
+        font-size: 16px;
+      }
+
+      .wrap {
+        width: 100%;
+        height: auto;
+      }
+
+      .container {
+        width: 800px;
+        height: 400px;
+        margin: 50px auto;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .items {
+        width: 2400px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: 0.5s;
+      }
+
+      .items img {
+        width: 800px;
+        height: 100%;
+        display: block;
+        float: left;
+      }
+
+      .items2 {
+        width: 2400px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.5s;
+      }
+
+      .items2 img {
+        width: 800px;
+        height: 100%;
+        display: block;
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="container">
+        <div class="items">
+          <img src="img/fantasy-2925250_1920.jpg" alt="사진1" />
+          <img src="img/landscape-1802337_1920.jpg" alt="사진2" />
+          <img src="img/moon-1859616_1920.jpg" alt="사진3" />
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="items2">
+          <img src="img/fantasy-2925250_1920.jpg" alt="사진1" />
+          <img src="img/landscape-1802337_1920.jpg" alt="사진2" />
+          <img src="img/moon-1859616_1920.jpg" alt="사진3" />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var slides = document.querySelector(".items");
+      var leftSlides = document.querySelector(".items2");
+
+      var count = 0;
+
+      var lefts = 0;
+
+      function rightSlide() {
+        if (count == 2) {
+          count = 0;
+        } else {
+          count++;
+        }
+
+        slides.style.right = 800 * -count + "px";
+      }
+
+      function leftSlide() {
+        if (lefts == 2) {
+          lefts = 0;
+        } else {
+          lefts++;
+        }
+
+        leftSlides.style.left = 800 * -lefts + "px";
+      }
+
+      window.setInterval("leftSlide()", 2000);
+      window.setInterval("rightSlide()", 2000);
+    </script>
+  </body>
+</html>
